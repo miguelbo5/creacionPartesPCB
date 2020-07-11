@@ -11,46 +11,83 @@
 
 <body>
 
-    <form>
-        <div class="form-group">
-            <label for="formGroupExampleInput"><b>Motivo del servicio</b></label>
-            <input type="text" class="form-control" id="motivoServicio" placeholder="Escribe el motivo de este servicio">
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="fechaServicio"><b>Fecha</b></label>
-            <input type="date" class="form-control" id="fechaServicio">
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="fechaServicio"><b>Nº Expediente</b></label>
-            <input type="text" class="form-control" id="numeroExpedienteServicio" placeholder="Dejalo en blanco si lo desconoces">
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="fechaServicio"><b>Municipio</b></label>
-            <input type="text" class="form-control" value="Burjassot" id="municipioServicio" placeholder="Escribe el motivo de este servicio">
-        </div>
-    </form>
+    <div style="margin-bottom: 5%;" class="justify-content-between d-flex flex-row">
 
-    <br>
+        <img style="width: 75px;" src="/imagenes/escudo_burjassot.png" alt="dsfd">
 
-    <p><b>Tipo de actividad</b></p>
+        <h2 class="align-self-center">Herramienta de creacion de partes para PCB</h2>
 
-    <div class="custom-control custom-radio">
-        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" />
-        <label class="custom-control-label" for="customRadio1">Retén</label>
-    </div>
-    <div class="custom-control custom-radio">
-        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" />
-        <label class="custom-control-label" for="customRadio2">Prevención</label>
-    </div>
-    <div class="custom-control custom-radio">
-        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" />
-        <label class="custom-control-label" for="customRadio2">Reunión</label>
+        <img style="width: 75px;" src="/imagenes/escudo_burjassot.png" alt="dsfd">
+
     </div>
 
-    <button type="button" class="btn btn-primary centrar">Descargar PDF</button>
+    <div style="margin-right: 40%;">
+
+        <form>
+            <div class="form-group">
+                <label for="formGroupExampleInput"><b>Motivo del servicio</b></label>
+                <input type="text" class="form-control" id="motivoServicio"
+                    placeholder="Escribe el motivo de este servicio">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="fechaServicio"><b>Fecha</b></label>
+                <input type="date" class="form-control" id="fechaServicio">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="fechaServicio"><b>Nº Expediente</b></label>
+                <input type="text" class="form-control" id="numeroExpedienteServicio"
+                    placeholder="Dejalo en blanco si lo desconoces">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="fechaServicio"><b>Municipio</b></label>
+                <input type="text" class="form-control" value="Burjassot" id="municipioServicio"
+                    placeholder="Escribe el motivo de este servicio">
+            </div>
+        </form>
+
+        <br>
+
+        <form class="form-inline">
+            <div style="margin-right: 5%;" class="form-group">
+                <label style="margin-right: 20px;"><b>Hora entrada</b></label>
+                <input type="time" class="form-control" id="horaEntradaServicio">
+            </div>
+
+            <div style="margin-right: 5%;" class="form-group">
+                <label style="margin-right: 20px;"><b>Hora salida</b></label>
+                <input type="time" class="form-control" id="horaSalidaServicio">
+            </div>
+        </form>
+
+        <br>
+
+        <p><b>Tipo de actividad</b></p>
+
+        <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" />
+            <label class="custom-control-label" for="customRadio1">Retén</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio2" checked="checked" name="customRadio" class="custom-control-input" />
+            <label class="custom-control-label" for="customRadio2">Prevención</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" />
+            <label class="custom-control-label" for="customRadio3">Reunión</label>
+        </div>
+
+        <br>
+
+        <p><b>Voluntarios que han asistido</b></p>
+
+        
+
+    </div>
+
+    <button style="margin-bottom: 5%;" type="button" class="btn btn-primary centrar">Descargar PDF</button>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
