@@ -1,58 +1,76 @@
 {
     "voluntarios": [
         {
-            "Manolo Bo": "A-01"
+            "nombre": "Manolo Bo",
+            "indicativo": "A-01"
         },
         {
-            "Luis Cucarella": "A-02"
+            "nombre": "A-02",
+            "indicativo": "A-02"
         },
         {
-            "Fran Fuentes": "D-01"
+            "nombre": "Fran Fuentes",
+            "indicativo": "D-01"
         },
         {
-            "Manu Garcia": "E-01"
+            "nombre": "Manu Garcia",
+            "indicativo": "E-01"
         },
         {
-            "Javier Cucarella": "E-02"
+            "nombre": "Javier Cucarella",
+            "indicativo": "E-02"
         },
         {
-            "Miguel Castellote": "E-03"
+            "nombre": "Miguel Castellote",
+            "indicativo": "E-03"
         },
         {
-            "Adrian Martinez": "V-01"
+            "nombre": "Adrian Martinez",
+            "indicativo": "V-01"
         },
         {
-            "Antonio Valls": "V-02"
+            "nombre": "Antonio Valls",
+            "indicativo": "V-02"
         },
         {
-            "Laura Asensi": "V-03"
+            "nombre": "Laura Asensi",
+            "indicativo": "V-03"
         },
         {
-            "Encarna Martinez": "V-04"
+            "nombre": "Encarna Martinez",
+            "indicativo": "V-04"
         },
         {
-            "Antonio García": "V-05"
+            "nombre": "Antonio García",
+            "indicativo": "V-05"
         },
         {
-            "Juan Pajuelo": "V-06"
+            "nombre": "Juan Pajuelo",
+            "indicativo": "V-06"
         },
         {
-            "Diego Martinez": "V-07"
+            "nombre": "Diego Martinez",
+            "indicativo": "V-07"
         },
         {
-            "Lucia Molina": "V-08"
+            "nombre": "Lucía Molina",
+            "indicativo": "V-08"
         },
         {
-            "Javier Oliver": "V-09"
+            "nombre": "Javier Oliver",
+            "indicativo": "V-09"
         },
         {
-            "Salud Garcera": "V-10"
+            "nombre": "Salud Garcera",
+            "indicativo": "V-10"
         },
         {
-            "Ioan Lica": "V-11"
+            "nombre": "Ioan Lica",
+            "indicativo": "V-11"
         },
         {
-            "Vicente García": "V-12"
+            "nombre": "Vicente García",
+            "indicativo": "V-12"
         }
     ]
 }
