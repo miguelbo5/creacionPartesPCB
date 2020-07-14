@@ -3,6 +3,8 @@
 <html>
 
 <head>
+    <title>Creación de partes</title>
+    <link rel="icon" type="image/png" href="/imagenes/escudo_burjassot.png">
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="index.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -11,6 +13,12 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="/mostrarMoviles.js"></script>
     <script src="/mostrarVoluntarios.js"></script>
+
+
+    
+
+
+
 </head>
 
 <body>
@@ -38,7 +46,7 @@
             </div>
             <br />
             <div class="form-group">
-                <label for="fechaServicio"><b>Nº Expediente</b></label>
+                <label><b>Nº Expediente</b></label>
                 <input type="text" class="form-control" id="numeroExpedienteServicio"
                     placeholder="Dejalo en blanco si lo desconoces" />
             </div>
@@ -95,6 +103,19 @@
                 </table>
             </div>
         </div>
+
+        <br>
+
+        <p><b>Moviles que se han utilizado</b></p>
+
+        <div class="wrapper">
+            <div class="profile">
+                <table id="movilesdata">
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
     </div>
 
     <button id="botonDescargar" style="margin-bottom: 5%;" type="button" class="btn btn-primary centrar">
@@ -110,6 +131,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+        
+    <!-- Scripts para crear los PDFs -->
+    <script src='node_modules/pdfmake/build/pdfmake.min.js'></script>
+    <script src='node_modules/pdfmake/build/vfs_fonts.js'></script>
 </body>
 
 </html>

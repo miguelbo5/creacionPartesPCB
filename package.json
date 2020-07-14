@@ -1,0 +1,15 @@
+{
+  "name": "creacionpartespcb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "crearPDF.js",
+  "dependencies": {
+    "pdfmake": "^0.1.66"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
