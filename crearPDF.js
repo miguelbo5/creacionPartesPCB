@@ -38,11 +38,11 @@ function descargarPDF() {
     console.log("Hora salida: " + horaSalida);
 
 
-    for(let i = 0; i < numeroVoluntarios; i++){
+    for (let i = 0; i < numeroVoluntarios; i++) {
 
         elementId = "checkBoxVoluntarios" + i;
-        
-        if(document.getElementById(elementId).checked){
+
+        if (document.getElementById(elementId).checked) {
 
             voluntarios.push(document.getElementById(elementId).value);
 
@@ -53,11 +53,11 @@ function descargarPDF() {
     console.log(voluntarios);
 
 
-    for(let i = 0; i < numeroMoviles; i++){
+    for (let i = 0; i < numeroMoviles; i++) {
 
         elementId = "checkBoxMoviles" + i;
-        
-        if(document.getElementById(elementId).checked){
+
+        if (document.getElementById(elementId).checked) {
 
             moviles.push(document.getElementById(elementId).value);
 
@@ -97,7 +97,7 @@ function printpdf() {
     }
 
     pdfMake.createPdf(docDefinition).download();
-    
+
 }
 
 
