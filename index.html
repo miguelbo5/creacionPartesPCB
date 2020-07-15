@@ -2,139 +2,145 @@
 
 <html>
 
-<head>
-    <title>Creación de partes</title>
-    <link rel="icon" type="image/png" href="/imagenes/escudo_burjassot.png">
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="index.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="/mostrarMoviles.js"></script>
-    <script src="/mostrarVoluntarios.js"></script>
-
-
+    <head>
+        <title>Creación de partes</title>
+        <link rel="icon" type="image/png" href="/imagenes/escudo_burjassot.png">
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="index.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
     
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="/mostrarMoviles.js"></script>
+        <script src="/mostrarVoluntarios.js"></script>
+    </head>
 
+    <body>
 
+        <!-- Alert para si no rellenas todos los campos, se muestra desde el JS -->
+        <div class="sticky-top alert alert-warning" role="alert">
+            <strong>¡Cuidado!</strong> Hay que rellenar todos los campos
+        </div>
+          
 
-</head>
+        <div style="margin-bottom: 5%;" class="justify-content-between d-flex flex-row">
+            <img style="width: 75px;" src="/imagenes/escudo_burjassot.png" alt="dsfd" />
 
-<body>
-    <div style="margin-bottom: 5%;" class="justify-content-between d-flex flex-row">
-        <img style="width: 75px;" src="/imagenes/escudo_burjassot.png" alt="dsfd" />
+            <h2 class="align-self-center">
+                Herramienta de creacion de partes para PCB
+            </h2>
 
-        <h2 class="align-self-center">
-            Herramienta de creacion de partes para PCB
-        </h2>
-
-        <img style="width: 75px;" src="/imagenes/escudo_burjassot.png" alt="dsfd" />
-    </div>
-
-    <div style="margin-right: 40%;">
-        <form>
-            <div class="form-group">
-                <label for="formGroupExampleInput"><b>Motivo del servicio</b></label>
-                <input type="text" class="form-control" id="motivoServicio"
-                    placeholder="Escribe el motivo de este servicio" />
-            </div>
-            <br />
-            <div class="form-group">
-                <label for="fechaServicio"><b>Fecha</b></label>
-                <input type="date" class="form-control" id="fechaServicio" />
-            </div>
-            <br />
-            <div class="form-group">
-                <label><b>Nº Expediente</b></label>
-                <input type="text" class="form-control" id="numeroExpedienteServicio"
-                    placeholder="Dejalo en blanco si lo desconoces" />
-            </div>
-            <br />
-            <div class="form-group">
-                <label for="fechaServicio"><b>Municipio</b></label>
-                <input type="text" class="form-control" value="Burjassot" id="municipioServicio"
-                    placeholder="Escribe el motivo de este servicio" />
-            </div>
-        </form>
-
-        <br />
-
-        <form class="form-inline">
-            <div style="margin-right: 5%;" class="form-group">
-                <label style="margin-right: 20px;"><b>Hora entrada</b></label>
-                <input type="time" class="form-control" id="horaEntradaServicio" />
-            </div>
-
-            <div style="margin-right: 5%;" class="form-group">
-                <label style="margin-right: 20px;"><b>Hora salida</b></label>
-                <input type="time" class="form-control" id="horaSalidaServicio" />
-            </div>
-        </form>
-
-        <br />
-
-        <p><b>Tipo de actividad</b></p>
-
-        <form>
-            <div class="custom-control custom-radio">
-                <input type="radio" value="retén" id="customRadio1" name="radioTipoActividad" class="custom-control-input" />
-                <label class="custom-control-label" for="customRadio1">Retén</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" value="prevencion" id="customRadio2" checked="checked" name="radioTipoActividad"
-                    class="custom-control-input" />
-                <label class="custom-control-label" for="customRadio2">Prevención</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" value="reunion" id="customRadio3" name="radioTipoActividad" class="custom-control-input" />
-                <label class="custom-control-label" for="customRadio3">Reunión</label>
-            </div>
-        </form>
-
-        <br>
-
-        <p><b>Voluntarios que han asistido</b></p>
-
-        <div class="wrapper">
-            <div class="profile">
-                <table id="userdata">
-                    <tbody></tbody>
-                </table>
-            </div>
+            <img style="width: 75px;" src="/imagenes/escudo_burjassot.png" alt="dsfd" />
         </div>
 
-        <br>
+        <div style="margin-right: 40%;">
+            <form>
+                <div class="form-group">
+                    <label for="formGroupExampleInput"><b>Motivo del servicio</b></label>
+                    <input type="text" class="form-control" id="motivoServicio"
+                        placeholder="Escribe el motivo de este servicio" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="fechaServicio"><b>Fecha</b></label>
+                    <input type="date" class="form-control" id="fechaServicio" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <label><b>Nº Expediente</b></label>
+                    <input type="text" class="form-control" id="numeroExpedienteServicio"
+                        placeholder="Dejalo en blanco si lo desconoces" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="fechaServicio"><b>Municipio</b></label>
+                    <input type="text" class="form-control" value="Burjassot" id="municipioServicio"
+                        placeholder="Escribe el motivo de este servicio" />
+                </div>
+            </form>
 
-        <p><b>Moviles que se han utilizado</b></p>
+            <br />
 
-        <div class="wrapper">
-            <div class="profile">
-                <table id="movilesdata">
-                    <tbody></tbody>
-                </table>
+            <form class="form-inline">
+                <div style="margin-right: 5%;" class="form-group">
+                    <label style="margin-right: 20px;"><b>Hora entrada</b></label>
+                    <input type="time" class="form-control" id="horaEntradaServicio" />
+                </div>
+
+                <div style="margin-right: 5%;" class="form-group">
+                    <label style="margin-right: 20px;"><b>Hora salida</b></label>
+                    <input type="time" class="form-control" id="horaSalidaServicio" />
+                </div>
+            </form>
+
+            <br />
+
+            <p><b>Tipo de actividad</b></p>
+
+            <form>
+                <div class="custom-control custom-radio">
+                    <input type="radio" value="retén" id="customRadio1" name="radioTipoActividad"
+                        class="custom-control-input" />
+                    <label class="custom-control-label" for="customRadio1">Retén</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" value="prevencion" id="customRadio2" checked="checked" name="radioTipoActividad"
+                        class="custom-control-input" />
+                    <label class="custom-control-label" for="customRadio2">Prevención</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" value="reunion" id="customRadio3" name="radioTipoActividad"
+                        class="custom-control-input" />
+                    <label class="custom-control-label" for="customRadio3">Reunión</label>
+                </div>
+            </form>
+
+            <br>
+
+            <p><b>Voluntarios que han asistido</b></p>
+
+            <!-- Listado de voluntarios -->
+            <div class="wrapper">
+                <div class="profile">
+                    <table id="userdata">
+                        <tbody></tbody>
+                    </table>
+                </div>
             </div>
+
+            <br>
+
+            <p><b>Moviles que se han utilizado</b></p>
+
+            <!-- Listado de moviles usados -->
+            <div class="wrapper">
+                <div class="profile">
+                    <table id="movilesdata">
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
         </div>
 
-    </div>
+        <button id="botonDescargar" style="margin-bottom: 5%;" type="button" class="btn btn-primary centrar">
+            Descargar PDF
+        </button>
 
-    <button id="botonDescargar" style="margin-bottom: 5%;" type="button" class="btn btn-primary centrar">
-        Descargar PDF
-    </button>
+        <script src="/crearPDF.js"></script>
 
-    <script src="/crearPDF.js"></script>
+        <!-- Scripts de bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
 
-    <!-- Scripts de bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-        
-    <!-- Scripts para crear los PDFs -->
-    <script src='node_modules/pdfmake/build/pdfmake.min.js'></script>
-    <script src='node_modules/pdfmake/build/vfs_fonts.js'></script>
-</body>
+        <!-- Scripts para crear los PDFs -->
+        <script src='node_modules/pdfmake/build/pdfmake.min.js'></script>
+        <script src='node_modules/pdfmake/build/vfs_fonts.js'></script>
+
+    </body>
 
 </html>

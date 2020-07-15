@@ -1,12 +1,12 @@
 document.getElementById("botonDescargar").addEventListener("click", descargarPDF);
 
-motivoServicio: String;
+var motivoServicio;
 fechaServicio: Date;
-numeroExpediente: String;
-municipio: String;
+var numeroExpediente;
+var municipio;
 horaEntrada: Date;
 horaSalida: Date;
-tipoActividad: String;
+var tipoActividad;
 var voluntarios = [];
 var numeroVoluntarios = getVoluntariosLenght();
 
@@ -19,12 +19,23 @@ function descargarPDF() {
     motivoServicio = document.getElementById("motivoServicio").value;
     console.log("Motivo servicio: " + motivoServicio);
 
+    fechaServicio = document.getElementById("fechaServicio").value;
+    console.log("Fecha servicio: " + fechaServicio);
+
     numeroExpediente = document.getElementById("numeroExpedienteServicio").value;
     console.log("Nº exp: " + numeroExpediente);
 
     tipoActividad = $("input:radio[name=radioTipoActividad]:checked").val();
     console.log("Tipo actividad: " + tipoActividad);
 
+    municipio = document.getElementById("municipioServicio").value;
+    console.log("Municipio: " + municipio);
+
+    horaEntrada = document.getElementById("horaEntradaServicio").value;
+    console.log("Hora entrada: " + horaEntrada);
+
+    horaSalida = document.getElementById("horaSalidaServicio").value;
+    console.log("Hora salida: " + horaSalida);
 
 
     for(let i = 0; i < numeroVoluntarios; i++){
@@ -56,18 +67,35 @@ function descargarPDF() {
 
     console.log(moviles);
 
-    printpdf();
+    if(checkForms()){
+        printpdf();
+        clearForms();
+    }else{
+        $('.alert').show()
+    }
+    
 
+}
+
+function clearForms() {
+    
+}
+
+function checkForms() {
+    
+    return true;
 
 }
 
 function printpdf() {
+
     var docDefinition = {
         content: [
-            'First paragraph',
+            motivoServicio,
             'Another paragraph'
         ]
     }
+
     pdfMake.createPdf(docDefinition).download();
     
 }

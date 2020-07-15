@@ -10,3 +10,7 @@ body{
     margin-right: auto;
     display: block !important;
 }
+
+.alert{
+    display: none;
+}

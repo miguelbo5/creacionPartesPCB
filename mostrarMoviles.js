@@ -11,7 +11,8 @@ $(function () {
                         '<input value="' + f.nombre + '" id="checkBoxMoviles' + i + '" type="checkbox" aria-label="Checkbox for following text input">' +
                     '</div>'+
                 '</div>' +
-                    '<input type="text" class="form-control" value="' + f.nombre + " " + f.matricula + '" aria-label="Text input with checkbox">' + 
+                    '<input type="text" class="form-control" value="' + f.nombre + " " + f.matricula + '" aria-label="Text input with checkbox">' +
+                    '<input type="text" class="form-control" placeholder="Indicativo">' + 
             '</div>';
             
             $(tblRow).appendTo("#movilesdata tbody");
