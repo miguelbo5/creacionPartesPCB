@@ -11,6 +11,13 @@ body{
     display: block !important;
 }
 
+.cabecera{
+
+    background-color: white;
+    border-radius: 10px;
+
+}
+
 .alert{
     display: none;
 }

@@ -12,7 +12,7 @@ $(function () {
                     '</div>'+
                 '</div>' +
                     '<input type="text" class="form-control" value="' + f.nombre + " " + f.indicativo + '">' + 
-                    '<input type="text" class="form-control" placeholder="Horas hechas">' +
+                    '<input id="horasVoluntario' + i + '" type="text" class="form-control" placeholder="Horas hechas">' +
             '</div>';
             
             $(tblRow).appendTo("#userdata tbody");

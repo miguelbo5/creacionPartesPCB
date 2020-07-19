@@ -8,6 +8,7 @@ horaEntrada: Date;
 horaSalida: Date;
 var tipoActividad;
 var voluntarios = [];
+var horasVoluntarios = [];
 var numeroVoluntarios = getVoluntariosLenght();
 
 var moviles = [];
@@ -37,7 +38,6 @@ function descargarPDF() {
     horaSalida = document.getElementById("horaSalidaServicio").value;
     console.log("Hora salida: " + horaSalida);
 
-
     for (let i = 0; i < numeroVoluntarios; i++) {
 
         elementId = "checkBoxVoluntarios" + i;
@@ -46,12 +46,14 @@ function descargarPDF() {
 
             voluntarios.push(document.getElementById(elementId).value);
 
+            horasVoluntarios.push(document.getElementById('horasVoluntario' + i).value);
+
         }
 
     }
 
     console.log(voluntarios);
-
+    console.log(horasVoluntarios);
 
     for (let i = 0; i < numeroMoviles; i++) {
 
@@ -67,36 +69,69 @@ function descargarPDF() {
 
     console.log(moviles);
 
-    if(checkForms()){
+
+
+    if (checkForms()) {
         printpdf();
         clearForms();
-    }else{
+    } else {
         $('.alert').show()
     }
-    
+
 
 }
 
 function clearForms() {
-    
+
 }
 
 function checkForms() {
-    
+
     return true;
 
 }
 
 function printpdf() {
 
-    var docDefinition = {
+    var documentoPdf = {
+
         content: [
-            motivoServicio,
-            'Another paragraph'
+            {
+                table:
+                {
+                    headerRows: 2,
+                    widths: 'auto',
+                    body: crearArray(voluntarios, horasVoluntarios)
+                }
+            }
         ]
     }
 
-    pdfMake.createPdf(docDefinition).download();
+    pdfMake.createPdf(documentoPdf).download();
+
+}
+
+function crearArray(voluntarios, horasVoluntarios) {
+    
+    var body = [];
+
+    var titulos = new Array( 'Nombre', 'Horas');
+
+    body.push(titulos);
+
+
+    for (let i = 0; i < voluntarios.length; i++) {
+        
+        var columna = [];
+
+        columna.push(voluntarios[i].toString());
+        columna.push(horasVoluntarios[i].toString())
+
+        body.push(columna);
+        
+    }
+
+    return body;
 
 }
 
