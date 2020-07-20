@@ -11,7 +11,7 @@ $(function () {
                         '<input value="' + f.nombre + '" id="checkBoxVoluntarios' + i + '" type="checkbox" >' +
                     '</div>'+
                 '</div>' +
-                    '<input type="text" class="form-control" value="' + f.nombre + " " + f.indicativo + '">' + 
+                    '<input type="text" readonly class="form-control" value="' + f.nombre + " " + f.indicativo + '">' + 
                     '<input id="horasVoluntario' + i + '" type="text" class="form-control" placeholder="Horas hechas">' +
             '</div>';
             

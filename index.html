@@ -79,17 +79,17 @@
 
         <form>
             <div class="custom-control custom-radio">
-                <input type="radio" value="retén" id="customRadio1" name="radioTipoActividad"
+                <input type="radio" value="Retén" id="customRadio1" name="radioTipoActividad"
                     class="custom-control-input" />
                 <label class="custom-control-label" for="customRadio1">Retén</label>
             </div>
             <div class="custom-control custom-radio">
-                <input type="radio" value="prevencion" id="customRadio2" checked="checked" name="radioTipoActividad"
+                <input type="radio" value="Prevencion" id="customRadio2" checked="checked" name="radioTipoActividad"
                     class="custom-control-input" />
                 <label class="custom-control-label" for="customRadio2">Prevención</label>
             </div>
             <div class="custom-control custom-radio">
-                <input type="radio" value="reunion" id="customRadio3" name="radioTipoActividad"
+                <input type="radio" value="Reunion" id="customRadio3" name="radioTipoActividad"
                     class="custom-control-input" />
                 <label class="custom-control-label" for="customRadio3">Reunión</label>
             </div>
@@ -99,44 +99,48 @@
 
         <p><b>Bar/Restaurante</b></p>
 
-        <div style="margin-bottom:20px; width: 50%;" class="input-group">
+        <div style="margin-bottom:20px" class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text"> 
-                    <input type="checkbox" >
+                    <input value="Desayuno" id="checkBoxDesayuno" type="checkbox" >
                 </div>
             </div>
-                <input type="text" class="form-control" value="Desayuno">
-                <input type="text" class="form-control" placeholder="Total">
+                <input type="text" readonly class="form-control" value="Desayuno">
+                <input id="barRestauranteDesayuno" type="text" class="form-control" placeholder="Bar/Restaurante">
+                <input id="totalPersonasDesayuno" type="text" class="form-control" placeholder="Total">
         </div>
 
-        <div style="margin-bottom:20px; width: 50%;" class="input-group">
+        <div style="margin-bottom:20px" class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text"> 
-                    <input type="checkbox" >
+                    <input value="Almuerzo" id="checkBoxAlmuerzo" type="checkbox" >
                 </div>
             </div>
-                <input type="text" class="form-control" value="Almuerzo">
-                <input type="text" class="form-control" placeholder="Total">
+                <input type="text" readonly class="form-control" value="Almuerzo">
+                <input id="barRestauranteAlmuerzo" type="text" class="form-control" placeholder="Bar/Restaurante">
+                <input id="totalPersonasAlmuerzo" type="text" class="form-control" placeholder="Total">
         </div>
 
-        <div style="margin-bottom:20px; width: 50%;" class="input-group">
+        <div style="margin-bottom:20px" class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text"> 
-                    <input type="checkbox" >
+                    <input value="Comida" id="checkBoxComida" type="checkbox" >
                 </div>
             </div>
-                <input type="text" class="form-control" value="Comida">
-                <input type="text" class="form-control" placeholder="Total">
+                <input type="text" readonly class="form-control" value="Comida">
+                <input id="barRestauranteComida" type="text" class="form-control" placeholder="Bar/Restaurante">
+                <input id="totalPersonasComida" type="text" class="form-control" placeholder="Total">
         </div>
 
-        <div style="margin-bottom:20px; width: 50%;" class="input-group">
+        <div style="margin-bottom:20px" class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text"> 
-                    <input type="checkbox" >
+                    <input value="Cena" id="checkBoxCena" type="checkbox" >
                 </div>
             </div>
-                <input type="text" class="form-control" value="Cena">
-                <input type="text" class="form-control" placeholder="Total">
+                <input type="text" readonly class="form-control" value="Cena">
+                <input id="barRestauranteCena" type="text" class="form-control" placeholder="Bar/Restaurante">
+                <input id="totalPersonasCena" type="text" class="form-control" placeholder="Total">
         </div>
 
         <p><b>Voluntarios que han asistido</b></p>
@@ -169,8 +173,10 @@
         Descargar PDF
     </button>
 
+    <!-- Script para crear el pdf -->
     <script src="/crearPDF.js"></script>
-
+    <!-- Script para formatear las fechas -->
+    <script type="text/javascript" src="node_modules/Datejs-master/build/date-es-ES.js"></script>
     <!-- Scripts de bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -178,7 +184,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-
     <!-- Scripts para crear los PDFs -->
     <script src='node_modules/pdfmake/build/pdfmake.min.js'></script>
     <script src='node_modules/pdfmake/build/vfs_fonts.js'></script>

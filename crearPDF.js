@@ -12,6 +12,7 @@ var horasVoluntarios = [];
 var numeroVoluntarios = getVoluntariosLenght();
 
 var moviles = [];
+var conductorMovil = [];
 var numeroMoviles = 4;
 
 
@@ -20,8 +21,7 @@ function descargarPDF() {
     motivoServicio = document.getElementById("motivoServicio").value;
     console.log("Motivo servicio: " + motivoServicio);
 
-    fechaServicio = document.getElementById("fechaServicio").value;
-    console.log("Fecha servicio: " + fechaServicio);
+    fechaServicio = new Date(document.getElementById("fechaServicio").value);
 
     numeroExpediente = document.getElementById("numeroExpedienteServicio").value;
     console.log("Nº exp: " + numeroExpediente);
@@ -63,11 +63,14 @@ function descargarPDF() {
 
             moviles.push(document.getElementById(elementId).value);
 
+            conductorMovil.push(document.getElementById('conductorVehiculo' + i).value);
+
         }
 
     }
 
     console.log(moviles);
+    console.log(conductorMovil);
 
 
 
@@ -93,42 +96,161 @@ function checkForms() {
 
 function printpdf() {
 
+    let headersTablaVoluntarios = new Array('Nombre', 'Horas');
+    let headersTablaMoviles = new Array('Vehiculo', 'Conductor');
+    let headersTablaComidas = new Array('Comida', 'Bar/Restaurante', 'Total');
+
     var documentoPdf = {
 
         content: [
+
             {
+                text: 'Motivo: ' + motivoServicio,
+                margin: [0, 5],
+            },
+
+            {
+                text: 'Fecha: ' + fechaServicio.toString('d/M/yyyy'),
+                margin: [0, 5],
+            },
+
+            {
+                text: 'Municipio: ' + municipio,
+                margin: [0, 5],
+            },
+
+            {
+                text: 'Tipo de servicio: ' + tipoActividad,
+                margin: [0, 5],
+            },
+
+            {
+                text: 'Hora entrada: ' + horaEntrada,
+                margin: [0, 5],
+            },
+
+            {
+                text: 'Hora salida: ' + horaSalida,
+                margin: [0, 5],
+            },
+
+
+                    //Tabla voluntarios
+                    {
+                        margin: [0, 10],
+                        table:
+                        {
+                            headerRows: 1,
+                            body: crearBodyTablas(headersTablaVoluntarios, voluntarios, horasVoluntarios)
+                        }
+                    },
+
+                    //Tabla moviles
+                    {
+                        margin: [0, 10],
+                        table:
+                        {
+                            headerRows: 1,
+                            body: crearBodyTablas(headersTablaMoviles, moviles, conductorMovil)
+                        }
+                    },
+
+                
+
+                
+            
+            //Tabla comidas
+            {
+                margin: [0, 10],
                 table:
                 {
-                    headerRows: 2,
-                    widths: 'auto',
-                    body: crearArray(voluntarios, horasVoluntarios)
+                    headerRows: 1,
+                    body: crearBodyTablaComidas(headersTablaComidas)
                 }
             }
+
         ]
     }
 
-    pdfMake.createPdf(documentoPdf).download();
+    let nombreArchivo = "PARTE " + fechaServicio.toString("d MMMM yyyy");
+
+    pdfMake.createPdf(documentoPdf).download(nombreArchivo);
 
 }
 
-function crearArray(voluntarios, horasVoluntarios) {
-    
-    var body = [];
+function crearBodyTablas(titulos, primerParametro, segundoParametro) {
 
-    var titulos = new Array( 'Nombre', 'Horas');
+    var body = [];
 
     body.push(titulos);
 
+    for (let i = 0; i < primerParametro.length; i++) {
 
-    for (let i = 0; i < voluntarios.length; i++) {
-        
         var columna = [];
 
-        columna.push(voluntarios[i].toString());
-        columna.push(horasVoluntarios[i].toString())
+        columna.push(primerParametro[i].toString());
+        columna.push(segundoParametro[i].toString())
 
         body.push(columna);
-        
+
+    }
+
+    return body;
+
+}
+
+function crearBodyTablaComidas(titulos) {
+
+    var body = [];
+
+    let comidas = [];
+    let restaurantes = [];
+    let totalPersonas = [];
+
+    body.push(titulos);
+
+    if (document.getElementById('checkBoxDesayuno').checked) {
+
+        comidas.push(document.getElementById('checkBoxDesayuno').value);
+        restaurantes.push(document.getElementById('barRestauranteDesayuno').value);
+        totalPersonas.push(document.getElementById('totalPersonasDesayuno').value);
+
+    }
+
+    if (document.getElementById('checkBoxAlmuerzo').checked) {
+
+        comidas.push(document.getElementById('checkBoxAlmuerzo').value);
+        restaurantes.push(document.getElementById('barRestauranteAlmuerzo').value);
+        totalPersonas.push(document.getElementById('totalPersonasAlmuerzo').value);
+
+    }
+
+    if (document.getElementById('checkBoxComida').checked) {
+
+        comidas.push(document.getElementById('checkBoxComida').value);
+        restaurantes.push(document.getElementById('barRestauranteComida').value);
+        totalPersonas.push(document.getElementById('totalPersonasComida').value);
+
+    }
+
+    if (document.getElementById('checkBoxCena').checked) {
+
+        comidas.push(document.getElementById('checkBoxCena').value);
+        restaurantes.push(document.getElementById('barRestauranteCena').value);
+        totalPersonas.push(document.getElementById('totalPersonasCena').value);
+
+
+    }
+
+    for (let i = 0; i < comidas.length; i++) {
+
+        let columna = [];
+        columna.push(comidas[i].toString());
+        columna.push(restaurantes[i].toString());
+        columna.push(totalPersonas[i].toString());
+
+        body.push(columna);
+
     }
 
     return body;
