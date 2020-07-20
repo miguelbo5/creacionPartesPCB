@@ -19,24 +19,18 @@ var numeroMoviles = 4;
 function descargarPDF() {
 
     motivoServicio = document.getElementById("motivoServicio").value;
-    console.log("Motivo servicio: " + motivoServicio);
 
     fechaServicio = new Date(document.getElementById("fechaServicio").value);
 
     numeroExpediente = document.getElementById("numeroExpedienteServicio").value;
-    console.log("Nº exp: " + numeroExpediente);
 
     tipoActividad = $("input:radio[name=radioTipoActividad]:checked").val();
-    console.log("Tipo actividad: " + tipoActividad);
 
     municipio = document.getElementById("municipioServicio").value;
-    console.log("Municipio: " + municipio);
 
     horaEntrada = document.getElementById("horaEntradaServicio").value;
-    console.log("Hora entrada: " + horaEntrada);
 
     horaSalida = document.getElementById("horaSalidaServicio").value;
-    console.log("Hora salida: " + horaSalida);
 
     for (let i = 0; i < numeroVoluntarios; i++) {
 
@@ -52,9 +46,6 @@ function descargarPDF() {
 
     }
 
-    console.log(voluntarios);
-    console.log(horasVoluntarios);
-
     for (let i = 0; i < numeroMoviles; i++) {
 
         elementId = "checkBoxMoviles" + i;
@@ -69,11 +60,6 @@ function descargarPDF() {
 
     }
 
-    console.log(moviles);
-    console.log(conductorMovil);
-
-
-
     if (checkForms()) {
         printpdf();
         clearForms();
@@ -86,11 +72,33 @@ function descargarPDF() {
 
 function clearForms() {
 
+    motivoServicio = document.getElementById("motivoServicio").value = null;
+
+    fechaServicio = new Date(document.getElementById("fechaServicio").value = null);
+
+    numeroExpediente = document.getElementById("numeroExpedienteServicio").value;
+
+    tipoActividad = $("input:radio[name=radioTipoActividad]:checked").val();
+
+    municipio = document.getElementById("municipioServicio").value;
+
+    horaEntrada = document.getElementById("horaEntradaServicio").value;
+
+    horaSalida = document.getElementById("horaSalidaServicio").value;
+
 }
 
 function checkForms() {
 
-    return true;
+    if(!motivoServicio || !fechaServicio || !voluntarios || !horaEntrada || !horaSalida || !municipio || !moviles){
+
+        return false;
+
+    }else{
+
+        return true;
+
+    }
 
 }
 
