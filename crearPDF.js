@@ -76,21 +76,19 @@ function clearForms() {
 
     fechaServicio = new Date(document.getElementById("fechaServicio").value = null);
 
-    numeroExpediente = document.getElementById("numeroExpedienteServicio").value;
+    numeroExpediente = document.getElementById("numeroExpedienteServicio").value = null;
 
-    tipoActividad = $("input:radio[name=radioTipoActividad]:checked").val();
+    municipio = document.getElementById("municipioServicio").value = null;
 
-    municipio = document.getElementById("municipioServicio").value;
+    horaEntrada = document.getElementById("horaEntradaServicio").value = null;
 
-    horaEntrada = document.getElementById("horaEntradaServicio").value;
-
-    horaSalida = document.getElementById("horaSalidaServicio").value;
+    horaSalida = document.getElementById("horaSalidaServicio").value = null;
 
 }
 
 function checkForms() {
 
-    if(!motivoServicio || !fechaServicio || !voluntarios || !horaEntrada || !horaSalida || !municipio || !moviles){
+    if(!motivoServicio || !fechaServicio || !horaEntrada || !horaSalida || !municipio){
 
         return false;
 
