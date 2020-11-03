@@ -1,0 +1,20 @@
+{
+    "moviles": [
+      {
+        "nombre": "Móvil 1",
+        "matricula": "5054-CWS"
+      },
+      {
+        "nombre": "Móvil 2",
+        "matricula": "0815-FJT"
+      },
+      {
+        "nombre": "Águila 1", 
+        "matricula": "8524-DVB"
+      },
+      {
+        "nombre": "Águila 2", 
+        "matricula": "8527-DVB"
+      }
+    ]
+  }
