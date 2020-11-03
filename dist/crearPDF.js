@@ -161,10 +161,6 @@ function printpdf() {
                         }
                     },
 
-                
-
-                
-            
             //Tabla comidas
             {
                 margin: [0, 10],
