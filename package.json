@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Software de creación de partes para PCB.",
   "main": "crearPDF.js",
-  "homepage": "https://miguelbo5.github.io/creacionPartesPCB/index.html",
+  "homepage": "https://miguelbo5.github.io/creacionPartesPCB/dist/index.html",
   "dependencies": {
     "date-master": "^0.1.0",
     "gh-pages": "^3.1.0",
