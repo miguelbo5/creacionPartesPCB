@@ -1,15 +1,18 @@
 {
   "name": "creacionpartespcb",
   "version": "1.0.0",
-  "description": "",
+  "description": "Software de creación de partes para PCB.",
   "main": "crearPDF.js",
+  "homepage": "https://miguelbo5.github.io/creacionPartesPCB/index.html",
   "dependencies": {
+    "gh-pages": "^3.1.0",
     "pdfmake": "^0.1.66"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist"
   },
-  "author": "",
+  "author": "Miguel Bo",
   "license": "ISC"
 }
